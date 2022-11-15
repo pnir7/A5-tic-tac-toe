@@ -5,11 +5,13 @@
 from logic import make_empty_board 
 from logic import get_winner
 from logic import other_player
+import random
 
 if __name__ == '__main__':
     board = make_empty_board()
     winner = None
     cur_player = 'X'
+    computer = 'O'
     while winner == None:
         print("TODO: take a turn!")
         # TODO: Show the board to the user.
@@ -32,6 +34,14 @@ if __name__ == '__main__':
             if int(b) >= 0 and int(b) < 3 and board[int(a)][int(b)] == None:
                 # TODO: Update the board.
                 board[int(a)][int(b)] = cur_player
+                c = random.randint(0,2)
+                d = random.randint(0,2)
+                if board[c][d] == None:
+                    board[c][d] = computer
+                else:
+                    c = random.randint(0,2)
+                    d = random.randint(0,2)
+                    continue
             else:
                 print('please input again')
                 continue
@@ -41,7 +51,7 @@ if __name__ == '__main__':
         
 
         # TODO: Update who's turn it is.
-        cur_player = other_player(cur_player)
+        # cur_player = other_player(cur_player)
 
         winner = get_winner(board)  
     
