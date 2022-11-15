@@ -1,6 +1,7 @@
 # This file is where game logic lives. No input
 # or output happens here. The logic in this file
 # should be unit-testable.
+import random
 
 
 def make_empty_board():
@@ -14,7 +15,7 @@ def make_empty_board():
 def get_winner(board):
     """Determines the winner of the given board.
     Returns 'X', 'O', or None."""
-   
+
     for line in range(3):
         if board[line][0] == board[line][1] == board[line][2]:
             return board[line][0]
@@ -31,10 +32,24 @@ def get_winner(board):
     return None
 
 
-
 def other_player(player):
     """Given the character for a player, returns the other player."""
     if player == 'O':
         return 'X'
     else:
-        return "O" 
+        return "O"
+
+
+def gen_num():
+    col = random.randint(0, 2)
+    row = random.randint(0, 2)
+    return col, row
+
+
+def user_input():
+    ret = input('input a number plz')
+    if ret.isdigit():
+        num = int(ret)
+        if 0 <= num <= 2:
+            return num
+    return False
