@@ -1,8 +1,22 @@
 {% extends '_base.html' %}
 {% block content %}
-<h1>welcome</h1>
+<h1>Welcome to Tic Tac Toe</h1>
 <form method="post">
-    <input type="text" name="name" id="name" placeholder="Enter your name" required>
-    <button>Submit</button>
+    <h3>Mode</h3>
+    <div>
+        <input type="radio" id="mode-1" name="mode" value="1" checked>
+        <label for="mode-1">☝️ One Player: </label><input type="text" name="name" id="name" placeholder="name" value="{{ name }}">
+    </div>
+
+    <div>
+        <input type="radio" id="mode-2" name="mode" value="2">
+        <label for="mode-2">✌️ Two Players</label>
+    </div>
+
+    <div class="error">{{ error }}</div>
+    <button>Start</button>
+    <hr>
+    <p><a href="/stats">View Stats</a></p>
+
 </form>
 {% endblock %}

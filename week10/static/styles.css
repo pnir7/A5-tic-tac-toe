@@ -1,5 +1,14 @@
 body {
-    background-color: #ccc; /* 换成你喜欢的颜色 */
+    background-color: #333;
+    color: #eee;
+}
+
+a, a:visited {
+    color: #eee;
+}
+
+.error {
+    color: #f00;
 }
 
 table {
@@ -7,12 +16,26 @@ table {
 }
 
 td {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     text-align: center;
+    font-size: 30px;
+}
+
+td form {
+    width: 50px;
+    height: 50px;
 }
 
 td button {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
 }
